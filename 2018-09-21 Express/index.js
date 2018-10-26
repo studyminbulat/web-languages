@@ -16,7 +16,7 @@ app
         console.log(routes_count);
         next();
     })
-    .get('/', r => res.send('Hello world!')
+    .get('/', r => r.res.send('Hello world!')
     )
     .get('/fuckup', r => {
         throw new Error('I`m just destroy')

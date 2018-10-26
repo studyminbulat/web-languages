@@ -7,7 +7,13 @@ app
     .use(bodyParser.json())
     .use(bodyParser.urlencoded({extended: true}))
     .get('/api/posts/', r => { // get last posts
-
+        const {User} = require('./bd');
+        const login = 'prof@univer.msk.ru';
+        
+            const {password} = User.findOne({login}).exec();
+            console.log(password);
+            process.exit(0);
+ 
         // return array of posts
         r.res.send()
     })
